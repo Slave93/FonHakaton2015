@@ -1,7 +1,7 @@
 package hakaton.mljfs.messenger.service;
 
 import hakaton.mljfs.messenger.database.DatabaseClass;
-import hakaton.mljfs.messenger.model.Profile;
+import hakaton.mljfs.messenger.model.ProfileJB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,27 +9,27 @@ import java.util.Map;
 
 public class ProfileService {
 
-	private Map<String, Profile> profiles = DatabaseClass.getProfiles();
+	private Map<String, ProfileJB> profiles = DatabaseClass.getProfiles();
 	
 	public ProfileService() {
-		profiles.put("koushik", new Profile(1L, "koushik", "Koushik", "Kothagal"));
+		profiles.put("koushik", new ProfileJB(1L, "koushik", "Koushik", "Kothagal"));
 	}
 	
-	public List<Profile> getAllProfiles() {
-		return new ArrayList<Profile>(profiles.values()); 
+	public List<ProfileJB> getAllProfiles() {
+		return new ArrayList<ProfileJB>(profiles.values()); 
 	}
 	
-	public Profile getProfile(String profileName) {
+	public ProfileJB getProfile(String profileName) {
 		return profiles.get(profileName);
 	}
 	
-	public Profile addProfile(Profile profile) {
+	public ProfileJB addProfile(ProfileJB profile) {
 		profile.setId(profiles.size() + 1);
 		profiles.put(profile.getProfileName(), profile);
 		return profile;
 	}
 	
-	public Profile updateProfile(Profile profile) {
+	public ProfileJB updateProfile(ProfileJB profile) {
 		if (profile.getProfileName().isEmpty()) {
 			return null;
 		}
@@ -37,7 +37,7 @@ public class ProfileService {
 		return profile;
 	}
 	
-	public Profile removeProfile(String profileName) {
+	public ProfileJB removeProfile(String profileName) {
 		return profiles.remove(profileName);
 	}
 	

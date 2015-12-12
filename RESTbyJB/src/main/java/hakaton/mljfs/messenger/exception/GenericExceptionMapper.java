@@ -13,12 +13,12 @@ import javax.ws.rs.ext.Provider;
 //Ovo je super stvar jer naprimer moze da ti se dogode razni izuzetci. Npr bas ukoliko trazis
 //poruku -> /messages/99999 koja ne postoji doci ce do null pointer exceptiona. Koji i se prikazao
 //korisniku uz 500 status a ovako ce dobiti samo 500 status.
-//@Provider
+@Provider
 public class GenericExceptionMapper implements ExceptionMapper<Throwable> {
 
 	@Override
 	public Response toResponse(Throwable ex) {
-		ErrorMessage errorMessage = new ErrorMessage(ex.getMessage(), 500, "http://javabrains.koushik.org");
+		ErrorMessage errorMessage = new ErrorMessage(ex.getMessage(), 500, "http://betoven.hakaton.rs");
 		return Response.status(Status.INTERNAL_SERVER_ERROR)
 				.entity(errorMessage)
 				.build();

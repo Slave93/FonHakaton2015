@@ -1,43 +1,35 @@
-package hakaton.mljfs.messenger.model;
+package hakaton.mljfs.messenger.model.registration;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import hakaton.mljfs.messenger.model.Building;
+
 @XmlRootElement
-public class Profile {
+public class RegistrationForm {
 	
-	private int id;
 	private String email;
 	private String password;
 	private String phone;
 	private String city;
 	private String state;
-	private Building faculty;
-	private Building hall;
+	private String facultyName;
+	private String hallName;
 	private String name;
 	
-	public Profile(){
+	public RegistrationForm(){
 		
 	}
 
-	public Profile(int id, String email, String password, String phone, String city, String state, Building faculty,
-			Building hall,String name) {		
-		this.id = id;
+	public RegistrationForm(String email, String password, String phone, String city, String state, String facultyName,
+			String hallName, String name) {		
 		this.email = email;
 		this.password = password;
 		this.phone = phone;
 		this.city = city;
 		this.state = state;
-		this.faculty = faculty;
-		this.hall = hall;
+		this.facultyName = facultyName;
+		this.hallName = hallName;
 		this.name = name;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getEmail() {
@@ -80,20 +72,20 @@ public class Profile {
 		this.state = state;
 	}
 
-	public Building getFaculty() {
-		return faculty;
+	public String getFacultyName() {
+		return facultyName;
 	}
 
-	public void setFaculty(Building faculty) {
-		this.faculty = faculty;
+	public void setFacultyName(String facultyName) {
+		this.facultyName = facultyName;
 	}
 
-	public Building getHall() {
-		return hall;
+	public String getHallName() {
+		return hallName;
 	}
 
-	public void setHall(Building hall) {
-		this.hall = hall;
+	public void setHallName(String hallName) {
+		this.hallName = hallName;
 	}
 
 	public String getName() {
@@ -102,7 +94,9 @@ public class Profile {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
-	
-	
+	}
+
 }
+	
+	
+	

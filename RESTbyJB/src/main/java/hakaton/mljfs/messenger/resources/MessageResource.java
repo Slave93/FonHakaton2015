@@ -108,7 +108,7 @@ public class MessageResource {
 
 	private String getUriForProfile(UriInfo uriInfo, Message message) {
 		URI uri = uriInfo.getBaseUriBuilder()
-       		 .path(ProfileResource.class)
+       		 .path(ProfileResourceJB.class)
        		 .path(message.getAuthor())
              .build();
         return uri.toString();

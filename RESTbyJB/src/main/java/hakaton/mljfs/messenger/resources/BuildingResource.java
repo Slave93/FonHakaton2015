@@ -47,8 +47,6 @@ public class BuildingResource {
 	 */
 	@GET	
 	public List<Building> getBuildings(@QueryParam("type") int type,@QueryParam("features") String features/*@BeanParam MessageFilterBean filterBean*/) {
-		System.out.println(type);
-		System.out.println(features);
 		if (type > 0) {
 			return BuildingDao.getBuildingsOfType(type);
 		}
